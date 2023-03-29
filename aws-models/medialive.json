@@ -558,16 +558,14 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for AcceptInputDeviceTransferRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for AcceptInputDeviceTransferRequest"
             }
         },
         "com.amazonaws.medialive#AcceptInputDeviceTransferResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for AcceptInputDeviceTransferResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for AcceptInputDeviceTransferResponse"
             }
         },
         "com.amazonaws.medialive#AccessibilityType": {
@@ -1482,7 +1480,7 @@
                 "AvailSettings": {
                     "target": "com.amazonaws.medialive#AvailSettings",
                     "traits": {
-                        "smithy.api#documentation": "Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update.",
+                        "smithy.api#documentation": "Ad avail settings.",
                         "smithy.api#jsonName": "availSettings"
                     }
                 }
@@ -1625,8 +1623,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to delete resources",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to delete resources"
             }
         },
         "com.amazonaws.medialive#BatchDeleteResponse": {
@@ -1648,8 +1645,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for BatchDeleteResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for BatchDeleteResponse"
             }
         },
         "com.amazonaws.medialive#BatchFailedResultModel": {
@@ -1814,8 +1810,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to start resources",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to start resources"
             }
         },
         "com.amazonaws.medialive#BatchStartResponse": {
@@ -1837,8 +1832,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for BatchStartResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for BatchStartResponse"
             }
         },
         "com.amazonaws.medialive#BatchStop": {
@@ -1903,8 +1897,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to stop resources",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to stop resources"
             }
         },
         "com.amazonaws.medialive#BatchStopResponse": {
@@ -1926,8 +1919,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for BatchStopResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for BatchStopResponse"
             }
         },
         "com.amazonaws.medialive#BatchSuccessfulResultModel": {
@@ -2029,8 +2021,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "List of actions to create and list of actions to delete.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "List of actions to create and list of actions to delete."
             }
         },
         "com.amazonaws.medialive#BatchUpdateScheduleResponse": {
@@ -2052,8 +2043,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for BatchUpdateScheduleResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for BatchUpdateScheduleResponse"
             }
         },
         "com.amazonaws.medialive#BlackoutSlate": {
@@ -2520,16 +2510,14 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for CancelInputDeviceTransferRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for CancelInputDeviceTransferRequest"
             }
         },
         "com.amazonaws.medialive#CancelInputDeviceTransferResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for CancelInputDeviceTransferResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for CancelInputDeviceTransferResponse"
             }
         },
         "com.amazonaws.medialive#CaptionDescription": {
@@ -2774,7 +2762,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Caption Selector"
+                "smithy.api#documentation": "Output groups for this Live Event. Output groups contain information about where streams should be distributed."
             }
         },
         "com.amazonaws.medialive#CaptionSelectorSettings": {
@@ -3291,16 +3279,14 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to claim an AWS Elemental device that you have purchased from a third-party vendor.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to claim an AWS Elemental device that you have purchased from a third-party vendor."
             }
         },
         "com.amazonaws.medialive#ClaimDeviceResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ClaimDeviceResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ClaimDeviceResponse"
             }
         },
         "com.amazonaws.medialive#ColorSpacePassthroughSettings": {
@@ -3486,8 +3472,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to create a channel",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to create a channel"
             }
         },
         "com.amazonaws.medialive#CreateChannelResponse": {
@@ -3501,8 +3486,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for CreateChannelResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for CreateChannelResponse"
             }
         },
         "com.amazonaws.medialive#CreateInput": {
@@ -3623,8 +3607,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "The name of the input",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "The name of the input"
             }
         },
         "com.amazonaws.medialive#CreateInputResponse": {
@@ -3638,8 +3621,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for CreateInputResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for CreateInputResponse"
             }
         },
         "com.amazonaws.medialive#CreateInputSecurityGroup": {
@@ -3698,8 +3680,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "The IPv4 CIDRs to whitelist for this Input Security Group",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "The IPv4 CIDRs to whitelist for this Input Security Group"
             }
         },
         "com.amazonaws.medialive#CreateInputSecurityGroupResponse": {
@@ -3713,8 +3694,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for CreateInputSecurityGroupResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for CreateInputSecurityGroupResponse"
             }
         },
         "com.amazonaws.medialive#CreateMultiplex": {
@@ -3841,8 +3821,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to create a program in a multiplex.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to create a program in a multiplex."
             }
         },
         "com.amazonaws.medialive#CreateMultiplexProgramResponse": {
@@ -3857,8 +3836,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for CreateMultiplexProgramResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for CreateMultiplexProgramResponse"
             }
         },
         "com.amazonaws.medialive#CreateMultiplexRequest": {
@@ -3906,8 +3884,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to create a multiplex.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to create a multiplex."
             }
         },
         "com.amazonaws.medialive#CreateMultiplexResponse": {
@@ -3922,8 +3899,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for CreateMultiplexResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for CreateMultiplexResponse"
             }
         },
         "com.amazonaws.medialive#CreatePartnerInput": {
@@ -3991,8 +3967,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to create a partner input",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to create a partner input"
             }
         },
         "com.amazonaws.medialive#CreatePartnerInputResponse": {
@@ -4006,8 +3981,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for CreatePartnerInputResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for CreatePartnerInputResponse"
             }
         },
         "com.amazonaws.medialive#CreateTags": {
@@ -4059,8 +4033,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for CreateTagsRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for CreateTagsRequest"
             }
         },
         "com.amazonaws.medialive#DeleteChannel": {
@@ -4119,8 +4092,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteChannelRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteChannelRequest"
             }
         },
         "com.amazonaws.medialive#DeleteChannelResponse": {
@@ -4253,8 +4225,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteChannelResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteChannelResponse"
             }
         },
         "com.amazonaws.medialive#DeleteInput": {
@@ -4313,16 +4284,14 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteInputRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteInputRequest"
             }
         },
         "com.amazonaws.medialive#DeleteInputResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteInputResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteInputResponse"
             }
         },
         "com.amazonaws.medialive#DeleteInputSecurityGroup": {
@@ -4378,16 +4347,14 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteInputSecurityGroupRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteInputSecurityGroupRequest"
             }
         },
         "com.amazonaws.medialive#DeleteInputSecurityGroupResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteInputSecurityGroupResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteInputSecurityGroupResponse"
             }
         },
         "com.amazonaws.medialive#DeleteMultiplex": {
@@ -4497,8 +4464,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteMultiplexProgramRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteMultiplexProgramRequest"
             }
         },
         "com.amazonaws.medialive#DeleteMultiplexProgramResponse": {
@@ -4541,8 +4507,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteMultiplexProgramResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteMultiplexProgramResponse"
             }
         },
         "com.amazonaws.medialive#DeleteMultiplexRequest": {
@@ -4558,8 +4523,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteMultiplexRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteMultiplexRequest"
             }
         },
         "com.amazonaws.medialive#DeleteMultiplexResponse": {
@@ -4639,8 +4603,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteMultiplexResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteMultiplexResponse"
             }
         },
         "com.amazonaws.medialive#DeleteReservation": {
@@ -4699,8 +4662,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteReservationRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteReservationRequest"
             }
         },
         "com.amazonaws.medialive#DeleteReservationResponse": {
@@ -4845,8 +4807,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteReservationResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteReservationResponse"
             }
         },
         "com.amazonaws.medialive#DeleteSchedule": {
@@ -4902,16 +4863,14 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteScheduleRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteScheduleRequest"
             }
         },
         "com.amazonaws.medialive#DeleteScheduleResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteScheduleResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteScheduleResponse"
             }
         },
         "com.amazonaws.medialive#DeleteTags": {
@@ -4965,8 +4924,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DeleteTagsRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DeleteTagsRequest"
             }
         },
         "com.amazonaws.medialive#DescribeChannel": {
@@ -5162,8 +5120,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeChannelRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeChannelRequest"
             }
         },
         "com.amazonaws.medialive#DescribeChannelResponse": {
@@ -5296,8 +5253,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeChannelResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeChannelResponse"
             }
         },
         "com.amazonaws.medialive#DescribeInput": {
@@ -5501,8 +5457,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeInputDeviceRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeInputDeviceRequest"
             }
         },
         "com.amazonaws.medialive#DescribeInputDeviceResponse": {
@@ -5594,8 +5549,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeInputDeviceResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeInputDeviceResponse"
             }
         },
         "com.amazonaws.medialive#DescribeInputDeviceThumbnail": {
@@ -5659,8 +5613,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeInputDeviceThumbnailRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeInputDeviceThumbnailRequest"
             }
         },
         "com.amazonaws.medialive#DescribeInputDeviceThumbnailResponse": {
@@ -5706,8 +5659,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeInputDeviceThumbnailResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeInputDeviceThumbnailResponse"
             }
         },
         "com.amazonaws.medialive#DescribeInputRequest": {
@@ -5723,8 +5675,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeInputRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeInputRequest"
             }
         },
         "com.amazonaws.medialive#DescribeInputResponse": {
@@ -5842,8 +5793,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeInputResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeInputResponse"
             }
         },
         "com.amazonaws.medialive#DescribeInputSecurityGroup": {
@@ -5899,8 +5849,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeInputSecurityGroupRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeInputSecurityGroupRequest"
             }
         },
         "com.amazonaws.medialive#DescribeInputSecurityGroupResponse": {
@@ -5950,8 +5899,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeInputSecurityGroupResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeInputSecurityGroupResponse"
             }
         },
         "com.amazonaws.medialive#DescribeMultiplex": {
@@ -6195,8 +6143,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeMultiplexProgramRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeMultiplexProgramRequest"
             }
         },
         "com.amazonaws.medialive#DescribeMultiplexProgramResponse": {
@@ -6239,8 +6186,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeMultiplexProgramResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeMultiplexProgramResponse"
             }
         },
         "com.amazonaws.medialive#DescribeMultiplexRequest": {
@@ -6256,8 +6202,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeMultiplexRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeMultiplexRequest"
             }
         },
         "com.amazonaws.medialive#DescribeMultiplexResponse": {
@@ -6337,8 +6282,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeMultiplexResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeMultiplexResponse"
             }
         },
         "com.amazonaws.medialive#DescribeOffering": {
@@ -6394,8 +6338,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeOfferingRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeOfferingRequest"
             }
         },
         "com.amazonaws.medialive#DescribeOfferingResponse": {
@@ -6483,8 +6426,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeOfferingResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeOfferingResponse"
             }
         },
         "com.amazonaws.medialive#DescribeReservation": {
@@ -6540,8 +6482,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeReservationRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeReservationRequest"
             }
         },
         "com.amazonaws.medialive#DescribeReservationResponse": {
@@ -6686,8 +6627,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeReservationResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeReservationResponse"
             }
         },
         "com.amazonaws.medialive#DescribeSchedule": {
@@ -6762,8 +6702,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeScheduleRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeScheduleRequest"
             }
         },
         "com.amazonaws.medialive#DescribeScheduleResponse": {
@@ -6785,8 +6724,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for DescribeScheduleResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for DescribeScheduleResponse"
             }
         },
         "com.amazonaws.medialive#DeviceSettingsSyncState": {
@@ -10748,7 +10686,7 @@
                     "target": "com.amazonaws.medialive#__integerMin0",
                     "traits": {
                         "smithy.api#default": 0,
-                        "smithy.api#documentation": "Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with \"s3\" or \"mediastore\". For other URIs, the value is always 3.",
+                        "smithy.api#documentation": "Number of retry attempts that will be made before the Live Event is put into an error state.",
                         "smithy.api#jsonName": "numRetries"
                     }
                 },
@@ -10802,7 +10740,7 @@
                     "target": "com.amazonaws.medialive#__integerMin0",
                     "traits": {
                         "smithy.api#default": 0,
-                        "smithy.api#documentation": "Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with \"s3\" or \"mediastore\". For other URIs, the value is always 3.",
+                        "smithy.api#documentation": "Number of retry attempts that will be made before the Live Event is put into an error state.",
                         "smithy.api#jsonName": "numRetries"
                     }
                 },
@@ -11534,7 +11472,7 @@
                     "target": "com.amazonaws.medialive#__integerMin0",
                     "traits": {
                         "smithy.api#default": 0,
-                        "smithy.api#documentation": "Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with \"s3\" or \"mediastore\". For other URIs, the value is always 3.",
+                        "smithy.api#documentation": "Number of retry attempts that will be made before the Live Event is put into an error state.",
                         "smithy.api#jsonName": "numRetries"
                     }
                 },
@@ -11927,7 +11865,7 @@
                     "target": "com.amazonaws.medialive#__integerMin0",
                     "traits": {
                         "smithy.api#default": 0,
-                        "smithy.api#documentation": "Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with \"s3\" or \"mediastore\". For other URIs, the value is always 3.",
+                        "smithy.api#documentation": "Number of retry attempts that will be made before the Live Event is put into an error state.",
                         "smithy.api#jsonName": "numRetries"
                     }
                 },
@@ -13807,8 +13745,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListChannelsRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for ListChannelsRequest"
             }
         },
         "com.amazonaws.medialive#ListChannelsResponse": {
@@ -13828,8 +13765,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListChannelsResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ListChannelsResponse"
             }
         },
         "com.amazonaws.medialive#ListInputDeviceTransfers": {
@@ -13903,8 +13839,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListInputDeviceTransfersRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for ListInputDeviceTransfersRequest"
             }
         },
         "com.amazonaws.medialive#ListInputDeviceTransfersResponse": {
@@ -13926,8 +13861,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListInputDeviceTransfersResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ListInputDeviceTransfersResponse"
             }
         },
         "com.amazonaws.medialive#ListInputDevices": {
@@ -13991,8 +13925,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListInputDevicesRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for ListInputDevicesRequest"
             }
         },
         "com.amazonaws.medialive#ListInputDevicesResponse": {
@@ -14014,8 +13947,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListInputDevicesResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ListInputDevicesResponse"
             }
         },
         "com.amazonaws.medialive#ListInputSecurityGroups": {
@@ -14079,8 +14011,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListInputSecurityGroupsRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for ListInputSecurityGroupsRequest"
             }
         },
         "com.amazonaws.medialive#ListInputSecurityGroupsResponse": {
@@ -14101,8 +14032,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListInputSecurityGroupsResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ListInputSecurityGroupsResponse"
             }
         },
         "com.amazonaws.medialive#ListInputs": {
@@ -14166,8 +14096,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListInputsRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for ListInputsRequest"
             }
         },
         "com.amazonaws.medialive#ListInputsResponse": {
@@ -14187,8 +14116,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListInputsResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ListInputsResponse"
             }
         },
         "com.amazonaws.medialive#ListMultiplexPrograms": {
@@ -14265,8 +14193,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListMultiplexProgramsRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for ListMultiplexProgramsRequest"
             }
         },
         "com.amazonaws.medialive#ListMultiplexProgramsResponse": {
@@ -14288,8 +14215,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListMultiplexProgramsResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ListMultiplexProgramsResponse"
             }
         },
         "com.amazonaws.medialive#ListMultiplexes": {
@@ -14355,8 +14281,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListMultiplexesRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for ListMultiplexesRequest"
             }
         },
         "com.amazonaws.medialive#ListMultiplexesResponse": {
@@ -14378,8 +14303,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListMultiplexesResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ListMultiplexesResponse"
             }
         },
         "com.amazonaws.medialive#ListOfferings": {
@@ -14513,8 +14437,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListOfferingsRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for ListOfferingsRequest"
             }
         },
         "com.amazonaws.medialive#ListOfferingsResponse": {
@@ -14536,8 +14459,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListOfferingsResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ListOfferingsResponse"
             }
         },
         "com.amazonaws.medialive#ListReservations": {
@@ -14657,8 +14579,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListReservationsRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for ListReservationsRequest"
             }
         },
         "com.amazonaws.medialive#ListReservationsResponse": {
@@ -14680,8 +14601,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListReservationsResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ListReservationsResponse"
             }
         },
         "com.amazonaws.medialive#ListTagsForResource": {
@@ -14727,8 +14647,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListTagsForResourceRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for ListTagsForResourceRequest"
             }
         },
         "com.amazonaws.medialive#ListTagsForResourceResponse": {
@@ -14742,8 +14661,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for ListTagsForResourceResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for ListTagsForResourceResponse"
             }
         },
         "com.amazonaws.medialive#LogLevel": {
@@ -16136,7 +16054,7 @@
                     "parameters": {
                         "Region": {
                             "builtIn": "AWS::Region",
-                            "required": false,
+                            "required": true,
                             "documentation": "The AWS region used to dispatch the request.",
                             "type": "String"
                         },
@@ -16165,16 +16083,161 @@
                         {
                             "conditions": [
                                 {
-                                    "fn": "isSet",
+                                    "fn": "aws.partition",
                                     "argv": [
                                         {
-                                            "ref": "Endpoint"
+                                            "ref": "Region"
                                         }
-                                    ]
+                                    ],
+                                    "assign": "PartitionResult"
                                 }
                             ],
                             "type": "tree",
                             "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "isSet",
+                                            "argv": [
+                                                {
+                                                    "ref": "Endpoint"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                                            "type": "error"
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseDualStack"
+                                                                },
+                                                                true
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                                    "type": "error"
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "endpoint": {
+                                                        "url": {
+                                                            "ref": "Endpoint"
+                                                        },
+                                                        "properties": {},
+                                                        "headers": {}
+                                                    },
+                                                    "type": "endpoint"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseFIPS"
+                                                },
+                                                true
+                                            ]
+                                        },
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsFIPS"
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsDualStack"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://medialive-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
                                 {
                                     "conditions": [
                                         {
@@ -16187,11 +16250,6 @@
                                             ]
                                         }
                                     ],
-                                    "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
-                                    "type": "error"
-                                },
-                                {
-                                    "conditions": [],
                                     "type": "tree",
                                     "rules": [
                                         {
@@ -16199,260 +16257,21 @@
                                                 {
                                                     "fn": "booleanEquals",
                                                     "argv": [
+                                                        true,
                                                         {
-                                                            "ref": "UseDualStack"
-                                                        },
-                                                        true
-                                                    ]
-                                                }
-                                            ],
-                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                            "type": "error"
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "endpoint": {
-                                                "url": {
-                                                    "ref": "Endpoint"
-                                                },
-                                                "properties": {},
-                                                "headers": {}
-                                            },
-                                            "type": "endpoint"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "conditions": [],
-                            "type": "tree",
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isSet",
-                                            "argv": [
-                                                {
-                                                    "ref": "Region"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "aws.partition",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsFIPS"
+                                                            ]
                                                         }
-                                                    ],
-                                                    "assign": "PartitionResult"
+                                                    ]
                                                 }
                                             ],
                                             "type": "tree",
                                             "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://medialive-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://medialive-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://medialive.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
                                                 {
                                                     "conditions": [],
                                                     "type": "tree",
@@ -16460,7 +16279,7 @@
                                                         {
                                                             "conditions": [],
                                                             "endpoint": {
-                                                                "url": "https://medialive.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "url": "https://medialive-fips.{Region}.{PartitionResult#dnsSuffix}",
                                                                 "properties": {},
                                                                 "headers": {}
                                                             },
@@ -16469,13 +16288,86 @@
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "FIPS is enabled but this partition does not support FIPS",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsDualStack"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://medialive.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "DualStack is enabled but this partition does not support DualStack",
+                                            "type": "error"
                                         }
                                     ]
                                 },
                                 {
                                     "conditions": [],
-                                    "error": "Invalid Configuration: Missing Region",
-                                    "type": "error"
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [],
+                                            "endpoint": {
+                                                "url": "https://medialive.{Region}.{PartitionResult#dnsSuffix}",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -16484,29 +16376,16 @@
                 "smithy.rules#endpointTests": {
                     "testCases": [
                         {
-                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://medialive.ap-northeast-1.amazonaws.com"
+                                    "url": "https://medialive.eu-central-1.amazonaws.com"
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": false,
-                                "Region": "ap-northeast-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.ap-northeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
                                 "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "ap-northeast-2"
+                                "Region": "eu-central-1"
                             }
                         },
                         {
@@ -16517,100 +16396,9 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": false,
+                                "UseDualStack": false,
                                 "Region": "ap-south-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.ap-southeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "ap-southeast-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.ap-southeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "ap-southeast-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.eu-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "eu-central-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-north-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.eu-north-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "eu-north-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.eu-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "eu-west-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.eu-west-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "eu-west-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-3 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.eu-west-3.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "eu-west-3"
                             }
                         },
                         {
@@ -16621,61 +16409,9 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": false,
+                                "UseDualStack": false,
                                 "Region": "sa-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.us-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "us-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive-fips.us-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": true,
-                                "Region": "us-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.us-east-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "us-east-2"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-2 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive-fips.us-east-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": true,
-                                "Region": "us-east-2"
                             }
                         },
                         {
@@ -16686,8 +16422,8 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": false,
+                                "UseDualStack": false,
                                 "Region": "us-west-2"
                             }
                         },
@@ -16699,9 +16435,165 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": true,
+                                "UseDualStack": false,
                                 "Region": "us-west-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.eu-north-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.eu-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-west-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.eu-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-west-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-3 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.eu-west-3.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-west-3"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.ap-southeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-southeast-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.ap-northeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-northeast-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.ap-northeast-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-northeast-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.ap-southeast-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-southeast-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive-fips.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.us-east-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-2 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive-fips.us-east-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-2"
                             }
                         },
                         {
@@ -16712,8 +16604,8 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": true,
                                 "UseFIPS": true,
+                                "UseDualStack": true,
                                 "Region": "us-east-1"
                             }
                         },
@@ -16725,61 +16617,9 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": true,
                                 "UseFIPS": false,
+                                "UseDualStack": true,
                                 "Region": "us-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive-fips.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": true,
-                                "UseFIPS": true,
-                                "Region": "cn-north-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive-fips.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": true,
-                                "Region": "cn-north-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": true,
-                                "UseFIPS": false,
-                                "Region": "cn-north-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "cn-north-1"
                             }
                         },
                         {
@@ -16790,8 +16630,8 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": true,
                                 "UseFIPS": true,
+                                "UseDualStack": true,
                                 "Region": "us-gov-east-1"
                             }
                         },
@@ -16803,8 +16643,8 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": true,
+                                "UseDualStack": false,
                                 "Region": "us-gov-east-1"
                             }
                         },
@@ -16816,8 +16656,8 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": true,
                                 "UseFIPS": false,
+                                "UseDualStack": true,
                                 "Region": "us-gov-east-1"
                             }
                         },
@@ -16829,35 +16669,9 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": false,
+                                "UseDualStack": false,
                                 "Region": "us-gov-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "us-iso-east-1"
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://medialive-fips.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": true,
-                                "Region": "us-iso-east-1"
                             }
                         },
                         {
@@ -16868,8 +16682,8 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": true,
+                                "UseDualStack": false,
                                 "Region": "us-isob-east-1"
                             }
                         },
@@ -16881,35 +16695,100 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": false,
+                                "UseDualStack": false,
                                 "Region": "us-isob-east-1"
                             }
                         },
                         {
-                            "documentation": "For custom endpoint with region set and fips disabled and dualstack disabled",
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://example.com"
+                                    "url": "https://medialive-fips.cn-north-1.api.amazonwebservices.com.cn"
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Region": "us-east-1",
-                                "Endpoint": "https://example.com"
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
                             }
                         },
                         {
-                            "documentation": "For custom endpoint with region not set and fips disabled and dualstack disabled",
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive-fips.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://medialive-fips.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with fips disabled and dualstack disabled",
                             "expect": {
                                 "endpoint": {
                                     "url": "https://example.com"
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -16919,8 +16798,8 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "UseFIPS": true,
+                                "UseDualStack": false,
                                 "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
@@ -16931,8 +16810,8 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
-                                "UseDualStack": true,
                                 "UseFIPS": false,
+                                "UseDualStack": true,
                                 "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
@@ -18409,13 +18288,6 @@
                         "smithy.api#jsonName": "sid",
                         "smithy.api#required": {}
                     }
-                },
-                "Timezone": {
-                    "target": "com.amazonaws.medialive#NielsenWatermarkTimezones",
-                    "traits": {
-                        "smithy.api#documentation": "Choose the timezone for the time stamps in the watermark. If not provided,\nthe timestamps will be in Coordinated Universal Time (UTC)",
-                        "smithy.api#jsonName": "timezone"
-                    }
                 }
             },
             "traits": {
@@ -18440,74 +18312,6 @@
             },
             "traits": {
                 "smithy.api#documentation": "State of Nielsen PCM to ID3 tagging"
-            }
-        },
-        "com.amazonaws.medialive#NielsenWatermarkTimezones": {
-            "type": "enum",
-            "members": {
-                "AMERICA_PUERTO_RICO": {
-                    "target": "smithy.api#Unit",
-                    "traits": {
-                        "smithy.api#enumValue": "AMERICA_PUERTO_RICO"
-                    }
-                },
-                "US_ALASKA": {
-                    "target": "smithy.api#Unit",
-                    "traits": {
-                        "smithy.api#enumValue": "US_ALASKA"
-                    }
-                },
-                "US_ARIZONA": {
-                    "target": "smithy.api#Unit",
-                    "traits": {
-                        "smithy.api#enumValue": "US_ARIZONA"
-                    }
-                },
-                "US_CENTRAL": {
-                    "target": "smithy.api#Unit",
-                    "traits": {
-                        "smithy.api#enumValue": "US_CENTRAL"
-                    }
-                },
-                "US_EASTERN": {
-                    "target": "smithy.api#Unit",
-                    "traits": {
-                        "smithy.api#enumValue": "US_EASTERN"
-                    }
-                },
-                "US_HAWAII": {
-                    "target": "smithy.api#Unit",
-                    "traits": {
-                        "smithy.api#enumValue": "US_HAWAII"
-                    }
-                },
-                "US_MOUNTAIN": {
-                    "target": "smithy.api#Unit",
-                    "traits": {
-                        "smithy.api#enumValue": "US_MOUNTAIN"
-                    }
-                },
-                "US_PACIFIC": {
-                    "target": "smithy.api#Unit",
-                    "traits": {
-                        "smithy.api#enumValue": "US_PACIFIC"
-                    }
-                },
-                "US_SAMOA": {
-                    "target": "smithy.api#Unit",
-                    "traits": {
-                        "smithy.api#enumValue": "US_SAMOA"
-                    }
-                },
-                "UTC": {
-                    "target": "smithy.api#Unit",
-                    "traits": {
-                        "smithy.api#enumValue": "UTC"
-                    }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "Nielsen Watermark Timezones"
             }
         },
         "com.amazonaws.medialive#NielsenWatermarksCbetStepaside": {
@@ -19210,8 +19014,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for PurchaseOfferingRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for PurchaseOfferingRequest"
             }
         },
         "com.amazonaws.medialive#PurchaseOfferingResponse": {
@@ -19225,8 +19028,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for PurchaseOfferingResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for PurchaseOfferingResponse"
             }
         },
         "com.amazonaws.medialive#RawSettings": {
@@ -19319,16 +19121,14 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to reboot an AWS Elemental device.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to reboot an AWS Elemental device."
             }
         },
         "com.amazonaws.medialive#RebootInputDeviceResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for RebootInputDeviceResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for RebootInputDeviceResponse"
             }
         },
         "com.amazonaws.medialive#Rec601Settings": {
@@ -19404,16 +19204,14 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for RejectInputDeviceTransferRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for RejectInputDeviceTransferRequest"
             }
         },
         "com.amazonaws.medialive#RejectInputDeviceTransferResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for RejectInputDeviceTransferResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for RejectInputDeviceTransferResponse"
             }
         },
         "com.amazonaws.medialive#RemixSettings": {
@@ -20831,7 +20629,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Typical configuration that applies breaks on splice inserts in addition to time signal placement opportunities, breaks, and advertisements."
+                "smithy.api#documentation": "Scte35 Splice Insert"
             }
         },
         "com.amazonaws.medialive#Scte35SpliceInsertNoRegionalBlackoutBehavior": {
@@ -20926,7 +20724,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Atypical configuration that applies segment breaks only on SCTE-35 time signal placement opportunities and breaks."
+                "smithy.api#documentation": "Scte35 Time Signal Apos"
             }
         },
         "com.amazonaws.medialive#Scte35TimeSignalScheduleActionSettings": {
@@ -21242,8 +21040,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for StartChannelRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for StartChannelRequest"
             }
         },
         "com.amazonaws.medialive#StartChannelResponse": {
@@ -21376,8 +21173,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for StartChannelResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for StartChannelResponse"
             }
         },
         "com.amazonaws.medialive#StartInputDeviceMaintenanceWindow": {
@@ -21436,16 +21232,14 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for StartInputDeviceMaintenanceWindowRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for StartInputDeviceMaintenanceWindowRequest"
             }
         },
         "com.amazonaws.medialive#StartInputDeviceMaintenanceWindowResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for StartInputDeviceMaintenanceWindowResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for StartInputDeviceMaintenanceWindowResponse"
             }
         },
         "com.amazonaws.medialive#StartMultiplex": {
@@ -21504,8 +21298,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for StartMultiplexRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for StartMultiplexRequest"
             }
         },
         "com.amazonaws.medialive#StartMultiplexResponse": {
@@ -21585,8 +21378,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for StartMultiplexResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for StartMultiplexResponse"
             }
         },
         "com.amazonaws.medialive#StartTimecode": {
@@ -21795,8 +21587,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for StopChannelRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for StopChannelRequest"
             }
         },
         "com.amazonaws.medialive#StopChannelResponse": {
@@ -21929,8 +21720,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for StopChannelResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for StopChannelResponse"
             }
         },
         "com.amazonaws.medialive#StopMultiplex": {
@@ -21989,8 +21779,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for StopMultiplexRequest",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Placeholder documentation for StopMultiplexRequest"
             }
         },
         "com.amazonaws.medialive#StopMultiplexResponse": {
@@ -22070,8 +21859,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for StopMultiplexResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for StopMultiplexResponse"
             }
         },
         "com.amazonaws.medialive#StopTimecode": {
@@ -22566,16 +22354,14 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to transfer an input device.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to transfer an input device."
             }
         },
         "com.amazonaws.medialive#TransferInputDeviceResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for TransferInputDeviceResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for TransferInputDeviceResponse"
             }
         },
         "com.amazonaws.medialive#TransferringInputDeviceSummary": {
@@ -22895,8 +22681,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Channel class that the channel should be updated to.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Channel class that the channel should be updated to."
             }
         },
         "com.amazonaws.medialive#UpdateChannelClassResponse": {
@@ -22910,8 +22695,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for UpdateChannelClassResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for UpdateChannelClassResponse"
             }
         },
         "com.amazonaws.medialive#UpdateChannelRequest": {
@@ -22989,8 +22773,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to update a channel.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to update a channel."
             }
         },
         "com.amazonaws.medialive#UpdateChannelResponse": {
@@ -23004,8 +22787,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for UpdateChannelResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for UpdateChannelResponse"
             }
         },
         "com.amazonaws.medialive#UpdateInput": {
@@ -23125,8 +22907,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to update an input device.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to update an input device."
             }
         },
         "com.amazonaws.medialive#UpdateInputDeviceResponse": {
@@ -23218,8 +22999,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for UpdateInputDeviceResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for UpdateInputDeviceResponse"
             }
         },
         "com.amazonaws.medialive#UpdateInputRequest": {
@@ -23284,8 +23064,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to update an input.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to update an input."
             }
         },
         "com.amazonaws.medialive#UpdateInputResponse": {
@@ -23299,8 +23078,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for UpdateInputResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for UpdateInputResponse"
             }
         },
         "com.amazonaws.medialive#UpdateInputSecurityGroup": {
@@ -23370,8 +23148,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "The request to update some combination of the Input Security Group name and the IPv4 CIDRs the Input Security Group should allow.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "The request to update some combination of the Input Security Group name and the IPv4 CIDRs the Input Security Group should allow."
             }
         },
         "com.amazonaws.medialive#UpdateInputSecurityGroupResponse": {
@@ -23385,8 +23162,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for UpdateInputSecurityGroupResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for UpdateInputSecurityGroupResponse"
             }
         },
         "com.amazonaws.medialive#UpdateMultiplex": {
@@ -23503,8 +23279,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to update a program in a multiplex.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to update a program in a multiplex."
             }
         },
         "com.amazonaws.medialive#UpdateMultiplexProgramResponse": {
@@ -23519,8 +23294,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for UpdateMultiplexProgramResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for UpdateMultiplexProgramResponse"
             }
         },
         "com.amazonaws.medialive#UpdateMultiplexRequest": {
@@ -23550,8 +23324,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "A request to update a multiplex.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "A request to update a multiplex."
             }
         },
         "com.amazonaws.medialive#UpdateMultiplexResponse": {
@@ -23566,8 +23339,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for UpdateMultiplexResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for UpdateMultiplexResponse"
             }
         },
         "com.amazonaws.medialive#UpdateReservation": {
@@ -23640,8 +23412,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Request to update a reservation",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "Request to update a reservation"
             }
         },
         "com.amazonaws.medialive#UpdateReservationResponse": {
@@ -23655,8 +23426,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Placeholder documentation for UpdateReservationResponse",
-                "smithy.api#output": {}
+                "smithy.api#documentation": "Placeholder documentation for UpdateReservationResponse"
             }
         },
         "com.amazonaws.medialive#ValidationError": {

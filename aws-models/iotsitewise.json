@@ -282,7 +282,7 @@
                     "parameters": {
                         "Region": {
                             "builtIn": "AWS::Region",
-                            "required": false,
+                            "required": true,
                             "documentation": "The AWS region used to dispatch the request.",
                             "type": "String"
                         },
@@ -311,16 +311,161 @@
                         {
                             "conditions": [
                                 {
-                                    "fn": "isSet",
+                                    "fn": "aws.partition",
                                     "argv": [
                                         {
-                                            "ref": "Endpoint"
+                                            "ref": "Region"
                                         }
-                                    ]
+                                    ],
+                                    "assign": "PartitionResult"
                                 }
                             ],
                             "type": "tree",
                             "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "isSet",
+                                            "argv": [
+                                                {
+                                                    "ref": "Endpoint"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                                            "type": "error"
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseDualStack"
+                                                                },
+                                                                true
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                                    "type": "error"
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "endpoint": {
+                                                        "url": {
+                                                            "ref": "Endpoint"
+                                                        },
+                                                        "properties": {},
+                                                        "headers": {}
+                                                    },
+                                                    "type": "endpoint"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseFIPS"
+                                                },
+                                                true
+                                            ]
+                                        },
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsFIPS"
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsDualStack"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://iotsitewise-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
                                 {
                                     "conditions": [
                                         {
@@ -333,11 +478,6 @@
                                             ]
                                         }
                                     ],
-                                    "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
-                                    "type": "error"
-                                },
-                                {
-                                    "conditions": [],
                                     "type": "tree",
                                     "rules": [
                                         {
@@ -345,260 +485,21 @@
                                                 {
                                                     "fn": "booleanEquals",
                                                     "argv": [
+                                                        true,
                                                         {
-                                                            "ref": "UseDualStack"
-                                                        },
-                                                        true
-                                                    ]
-                                                }
-                                            ],
-                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                            "type": "error"
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "endpoint": {
-                                                "url": {
-                                                    "ref": "Endpoint"
-                                                },
-                                                "properties": {},
-                                                "headers": {}
-                                            },
-                                            "type": "endpoint"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "conditions": [],
-                            "type": "tree",
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isSet",
-                                            "argv": [
-                                                {
-                                                    "ref": "Region"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "aws.partition",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsFIPS"
+                                                            ]
                                                         }
-                                                    ],
-                                                    "assign": "PartitionResult"
+                                                    ]
                                                 }
                                             ],
                                             "type": "tree",
                                             "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://iotsitewise-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://iotsitewise-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://iotsitewise.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
                                                 {
                                                     "conditions": [],
                                                     "type": "tree",
@@ -606,7 +507,7 @@
                                                         {
                                                             "conditions": [],
                                                             "endpoint": {
-                                                                "url": "https://iotsitewise.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "url": "https://iotsitewise-fips.{Region}.{PartitionResult#dnsSuffix}",
                                                                 "properties": {},
                                                                 "headers": {}
                                                             },
@@ -615,13 +516,86 @@
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "FIPS is enabled but this partition does not support FIPS",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsDualStack"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://iotsitewise.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "DualStack is enabled but this partition does not support DualStack",
+                                            "type": "error"
                                         }
                                     ]
                                 },
                                 {
                                     "conditions": [],
-                                    "error": "Invalid Configuration: Missing Region",
-                                    "type": "error"
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [],
+                                            "endpoint": {
+                                                "url": "https://iotsitewise.{Region}.{PartitionResult#dnsSuffix}",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -630,58 +604,6 @@
                 "smithy.rules#endpointTests": {
                     "testCases": [
                         {
-                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.ap-northeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.ap-northeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-2",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.ap-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-south-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.ap-southeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
                             "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
@@ -689,9 +611,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-southeast-2",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "ap-southeast-2"
                             }
                         },
                         {
@@ -702,9 +624,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "ca-central-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "ca-central-1"
                             }
                         },
                         {
@@ -715,87 +637,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "ca-central-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.eu-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-central-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.eu-west-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-west-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.us-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise-fips.us-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.us-east-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-2",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-2 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise-fips.us-east-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-2",
-                                "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "ca-central-1"
                             }
                         },
                         {
@@ -806,9 +650,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-2",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-west-2"
                             }
                         },
                         {
@@ -819,9 +663,139 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-2",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-west-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.ap-south-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-south-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.ap-northeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-northeast-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.ap-northeast-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-northeast-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.eu-central-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-central-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise-fips.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.eu-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-west-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.us-east-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-2 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise-fips.us-east-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.ap-southeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-southeast-1"
                             }
                         },
                         {
@@ -832,9 +806,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": true,
-                                "UseFIPS": true
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -845,61 +819,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise-fips.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise-fips.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -910,9 +832,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-west-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-gov-west-1"
                             }
                         },
                         {
@@ -923,9 +845,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-west-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-gov-west-1"
                             }
                         },
                         {
@@ -936,9 +858,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": true,
-                                "UseFIPS": true
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -949,9 +871,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -962,9 +884,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": true,
-                                "UseFIPS": false
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -975,35 +897,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise-fips.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://iotsitewise.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1014,9 +910,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
@@ -1027,35 +923,100 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
-                            "documentation": "For custom endpoint with region set and fips disabled and dualstack disabled",
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise-fips.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise-fips.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise-fips.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://iotsitewise.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with fips disabled and dualstack disabled",
                             "expect": {
                                 "endpoint": {
                                     "url": "https://example.com"
                                 }
                             },
                             "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
                                 "Region": "us-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Endpoint": "https://example.com"
-                            }
-                        },
-                        {
-                            "documentation": "For custom endpoint with region not set and fips disabled and dualstack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://example.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1065,9 +1026,9 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
                                 "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1077,9 +1038,9 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": true,
                                 "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         }
@@ -1835,7 +1796,7 @@
                 "arn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset model, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset model, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -2142,7 +2103,7 @@
                 "arn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -2274,9 +2235,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#AssociateTimeSeriesToAssetProperty": {
@@ -2350,9 +2308,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#AssociatedAssetsSummaries": {
@@ -2374,7 +2329,7 @@
                 "arn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -2530,9 +2485,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchAssociateProjectAssetsResponse": {
@@ -2544,9 +2496,6 @@
                         "smithy.api#documentation": "<p>A list of associated error information, if any.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchDisassociateProjectAssets": {
@@ -2614,9 +2563,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchDisassociateProjectAssetsResponse": {
@@ -2628,9 +2574,6 @@
                         "smithy.api#documentation": "<p>A list of associated error information, if any.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchEntryCompletionStatus": {
@@ -2878,9 +2821,6 @@
                         "smithy.api#documentation": "<p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs\n      first.</p>\n         <ul>\n            <li>\n               <p>The size of the result set is less than 1 MB.</p>\n            </li>\n            <li>\n               <p>The number of data points in the result set is less than the value of\n            <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchGetAssetPropertyAggregatesResponse": {
@@ -2913,9 +2853,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchGetAssetPropertyAggregatesSkippedEntries": {
@@ -3349,9 +3286,6 @@
                         "smithy.api#documentation": "<p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs\n      first.</p>\n         <ul>\n            <li>\n               <p>The size of the result set is less than 1 MB.</p>\n            </li>\n            <li>\n               <p>The number of data points in the result set is less than the value of\n            <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchGetAssetPropertyValueHistoryResponse": {
@@ -3384,9 +3318,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchGetAssetPropertyValueHistorySkippedEntries": {
@@ -3457,7 +3388,7 @@
                 "entries": {
                     "target": "com.amazonaws.iotsitewise#BatchGetAssetPropertyValueEntries",
                     "traits": {
-                        "smithy.api#documentation": "<p>The list of asset property value entries for the batch get request. You can specify up to\n      128 entries per request.</p>",
+                        "smithy.api#documentation": "<p>The list of asset property value entries for the batch get request. You can specify up to\n      16 entries per request.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -3467,9 +3398,6 @@
                         "smithy.api#documentation": "<p>The token to be used for the next set of paginated results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchGetAssetPropertyValueResponse": {
@@ -3502,9 +3430,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchGetAssetPropertyValueSkippedEntries": {
@@ -3740,9 +3665,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#BatchPutAssetPropertyValueResponse": {
@@ -3755,9 +3677,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#Bucket": {
@@ -4116,9 +4035,6 @@
                         "smithy.api#documentation": "<p>A list of key-value pairs that contain metadata for the access policy. For more\n      information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html\">Tagging your\n        IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateAccessPolicyResponse": {
@@ -4134,13 +4050,10 @@
                 "accessPolicyArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the access policy, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the access policy, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateAsset": {
@@ -4276,9 +4189,6 @@
                         "smithy.api#documentation": "<p>A list of key-value pairs that contain metadata for the asset model. For more information,\n      see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html\">Tagging your IoT SiteWise\n        resources</a> in the <i>IoT SiteWise User Guide</i>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateAssetModelResponse": {
@@ -4294,7 +4204,7 @@
                 "assetModelArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset model, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset model, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -4305,9 +4215,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateAssetRequest": {
@@ -4346,9 +4253,6 @@
                         "smithy.api#documentation": "<p>A description for the asset.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateAssetResponse": {
@@ -4364,7 +4268,7 @@
                 "assetArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -4375,9 +4279,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateBulkImportJob": {
@@ -4461,9 +4362,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateBulkImportJobResponse": {
@@ -4490,9 +4388,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateDashboard": {
@@ -4575,9 +4470,6 @@
                         "smithy.api#documentation": "<p>A list of key-value pairs that contain metadata for the dashboard. For more information,\n      see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html\">Tagging your IoT SiteWise\n        resources</a> in the <i>IoT SiteWise User Guide</i>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateDashboardResponse": {
@@ -4593,13 +4485,10 @@
                 "dashboardArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the dashboard, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the dashboard, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateGateway": {
@@ -4662,9 +4551,6 @@
                         "smithy.api#documentation": "<p>A list of key-value pairs that contain metadata for the gateway. For more information, see\n        <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html\">Tagging your IoT SiteWise\n        resources</a> in the <i>IoT SiteWise User Guide</i>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateGatewayResponse": {
@@ -4680,13 +4566,10 @@
                 "gatewayArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the gateway, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the gateway, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#CreatePortal": {
@@ -4793,9 +4676,6 @@
                         "smithy.api#documentation": "<p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. \n  You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. \n  For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html\">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#CreatePortalResponse": {
@@ -4811,7 +4691,7 @@
                 "portalArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the portal, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the portal, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -4836,9 +4716,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateProject": {
@@ -4914,9 +4791,6 @@
                         "smithy.api#documentation": "<p>A list of key-value pairs that contain metadata for the project. For more information, see\n        <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html\">Tagging your IoT SiteWise\n        resources</a> in the <i>IoT SiteWise User Guide</i>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#CreateProjectResponse": {
@@ -4932,13 +4806,10 @@
                 "projectArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the project, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the project, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#Csv": {
@@ -5096,17 +4967,11 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DeleteAccessPolicyResponse": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#DeleteAsset": {
             "type": "operation",
@@ -5201,9 +5066,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DeleteAssetModelResponse": {
@@ -5216,9 +5078,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DeleteAssetRequest": {
@@ -5240,9 +5099,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DeleteAssetResponse": {
@@ -5255,9 +5111,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DeleteDashboard": {
@@ -5313,17 +5166,11 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DeleteDashboardResponse": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#DeleteGateway": {
             "type": "operation",
@@ -5370,9 +5217,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DeletePortal": {
@@ -5431,9 +5275,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DeletePortalResponse": {
@@ -5446,9 +5287,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DeleteProject": {
@@ -5504,17 +5342,11 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DeleteProjectResponse": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#DeleteTimeSeries": {
             "type": "operation",
@@ -5584,9 +5416,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeAccessPolicy": {
@@ -5634,9 +5463,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeAccessPolicyResponse": {
@@ -5652,7 +5478,7 @@
                 "accessPolicyArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the access policy, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the access policy, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -5691,9 +5517,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeAsset": {
@@ -5859,9 +5682,6 @@
                         "smithy.api#httpQuery": "excludeProperties"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeAssetModelResponse": {
@@ -5877,7 +5697,7 @@
                 "assetModelArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset model, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset model, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -5936,9 +5756,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeAssetProperty": {
@@ -5994,9 +5811,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeAssetPropertyResponse": {
@@ -6035,9 +5849,6 @@
                         "smithy.api#documentation": "<p>The composite asset model that declares this asset property, if this asset property exists\n      in a composite model.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeAssetRequest": {
@@ -6059,9 +5870,6 @@
                         "smithy.api#httpQuery": "excludeProperties"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeAssetResponse": {
@@ -6077,7 +5885,7 @@
                 "assetArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the asset, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -6142,9 +5950,6 @@
                         "smithy.api#documentation": "<p>A description for the asset.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeBulkImportJob": {
@@ -6192,9 +5997,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeBulkImportJobResponse": {
@@ -6263,9 +6065,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeDashboard": {
@@ -6313,9 +6112,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeDashboardResponse": {
@@ -6331,7 +6127,7 @@
                 "dashboardArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the dashboard, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the dashboard, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -6376,9 +6172,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeDefaultEncryptionConfiguration": {
@@ -6414,10 +6207,7 @@
         },
         "com.amazonaws.iotsitewise#DescribeDefaultEncryptionConfigurationRequest": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#input": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#DescribeDefaultEncryptionConfigurationResponse": {
             "type": "structure",
@@ -6442,9 +6232,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeGateway": {
@@ -6534,9 +6321,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeGatewayCapabilityConfigurationResponse": {
@@ -6570,9 +6354,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeGatewayRequest": {
@@ -6586,9 +6367,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeGatewayResponse": {
@@ -6611,7 +6389,7 @@
                 "gatewayArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the gateway, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the gateway, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -6642,9 +6420,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeLoggingOptions": {
@@ -6683,10 +6458,7 @@
         },
         "com.amazonaws.iotsitewise#DescribeLoggingOptionsRequest": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#input": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#DescribeLoggingOptionsResponse": {
             "type": "structure",
@@ -6698,9 +6470,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribePortal": {
@@ -6776,9 +6545,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribePortalResponse": {
@@ -6794,7 +6560,7 @@
                 "portalArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the portal, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the portal, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -6883,9 +6649,6 @@
                         "smithy.api#documentation": "<p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeProject": {
@@ -6933,9 +6696,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeProjectResponse": {
@@ -6951,7 +6711,7 @@
                 "projectArn": {
                     "target": "com.amazonaws.iotsitewise#ARN",
                     "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the project, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>\n         </p>",
+                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the project, which has the following format.</p>\n        <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -6989,9 +6749,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeStorageConfiguration": {
@@ -7036,10 +6793,7 @@
         },
         "com.amazonaws.iotsitewise#DescribeStorageConfigurationRequest": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#input": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#DescribeStorageConfigurationResponse": {
             "type": "structure",
@@ -7081,9 +6835,6 @@
                         "smithy.api#documentation": "<p>The date the storage configuration was last updated, in Unix epoch time.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeTimeSeries": {
@@ -7144,9 +6895,6 @@
                         "smithy.api#httpQuery": "propertyId"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DescribeTimeSeriesResponse": {
@@ -7203,17 +6951,7 @@
                         "smithy.api#documentation": "<p>The date that the time series was last updated, in Unix epoch time.</p>",
                         "smithy.api#required": {}
                     }
-                },
-                "timeSeriesArn": {
-                    "target": "com.amazonaws.iotsitewise#ARN",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the time series, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>\n         </p>",
-                        "smithy.api#required": {}
-                    }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#Description": {
@@ -7343,9 +7081,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DisassociateTimeSeriesFromAssetProperty": {
@@ -7419,9 +7154,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#DisassociatedDataStorageState": {
@@ -7900,9 +7632,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#GetAssetPropertyAggregatesResponse": {
@@ -7921,9 +7650,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#GetAssetPropertyValue": {
@@ -8072,9 +7798,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#GetAssetPropertyValueHistoryResponse": {
@@ -8093,9 +7816,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#GetAssetPropertyValueRequest": {
@@ -8122,9 +7842,6 @@
                         "smithy.api#httpQuery": "propertyAlias"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#GetAssetPropertyValueResponse": {
@@ -8136,9 +7853,6 @@
                         "smithy.api#documentation": "<p>The current asset property value.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#GetInterpolatedAssetPropertyValues": {
@@ -8283,9 +7997,6 @@
                         "smithy.api#httpQuery": "intervalWindowInSeconds"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#GetInterpolatedAssetPropertyValuesResponse": {
@@ -8304,9 +8015,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#Greengrass": {
@@ -8851,9 +8559,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAccessPoliciesResponse": {
@@ -8872,9 +8577,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssetModelProperties": {
@@ -8966,9 +8668,6 @@
                         "smithy.api#httpQuery": "filter"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssetModelPropertiesResponse": {
@@ -8987,9 +8686,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssetModels": {
@@ -9046,9 +8742,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssetModelsResponse": {
@@ -9067,9 +8760,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssetProperties": {
@@ -9161,9 +8851,6 @@
                         "smithy.api#httpQuery": "filter"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssetPropertiesResponse": {
@@ -9182,9 +8869,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssetRelationships": {
@@ -9260,9 +8944,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssetRelationshipsResponse": {
@@ -9281,9 +8962,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssets": {
@@ -9374,9 +9052,6 @@
                         "smithy.api#httpQuery": "filter"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssetsResponse": {
@@ -9395,9 +9070,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssociatedAssets": {
@@ -9479,9 +9151,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListAssociatedAssetsResponse": {
@@ -9500,9 +9169,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListBulkImportJobs": {
@@ -9616,9 +9282,6 @@
                         "smithy.api#httpQuery": "filter"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListBulkImportJobsResponse": {
@@ -9637,9 +9300,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListDashboards": {
@@ -9704,9 +9364,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListDashboardsResponse": {
@@ -9725,9 +9382,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListGateways": {
@@ -9784,9 +9438,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListGatewaysResponse": {
@@ -9805,9 +9456,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListPortals": {
@@ -9864,9 +9512,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListPortalsResponse": {
@@ -9884,9 +9529,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListProjectAssets": {
@@ -9951,9 +9593,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListProjectAssetsResponse": {
@@ -9972,9 +9611,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListProjects": {
@@ -10039,9 +9675,6 @@
                         "smithy.api#httpQuery": "maxResults"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListProjectsResponse": {
@@ -10060,9 +9693,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListTagsForResource": {
@@ -10119,9 +9749,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListTagsForResourceResponse": {
@@ -10133,9 +9760,6 @@
                         "smithy.api#documentation": "<p>The list of key-value pairs that contain metadata for the resource. For more information,\n      see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html\">Tagging your IoT SiteWise\n        resources</a> in the <i>IoT SiteWise User Guide</i>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListTimeSeries": {
@@ -10216,9 +9840,6 @@
                         "smithy.api#httpQuery": "timeSeriesType"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#ListTimeSeriesResponse": {
@@ -10237,9 +9858,6 @@
                         "smithy.api#documentation": "<p>The token for the next set of results, or null if there are no additional results.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#ListTimeSeriesType": {
@@ -11040,9 +10658,6 @@
                         "smithy.api#documentation": "<p>The Key ID of the customer managed key used for KMS encryption. This is required if you\n      use <code>KMS_BASED_ENCRYPTION</code>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#PutDefaultEncryptionConfigurationResponse": {
@@ -11068,9 +10683,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#PutLoggingOptions": {
@@ -11120,17 +10732,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#PutLoggingOptionsResponse": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#PutStorageConfiguration": {
             "type": "operation",
@@ -11200,9 +10806,6 @@
                 "retentionPeriod": {
                     "target": "com.amazonaws.iotsitewise#RetentionPeriod"
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#PutStorageConfigurationResponse": {
@@ -11236,9 +10839,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#Qualities": {
@@ -11541,17 +11141,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#TagResourceResponse": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#TagValue": {
             "type": "string",
@@ -11692,13 +11286,6 @@
                     "target": "com.amazonaws.iotsitewise#Timestamp",
                     "traits": {
                         "smithy.api#documentation": "<p>The date that the time series was last updated, in Unix epoch time.</p>",
-                        "smithy.api#required": {}
-                    }
-                },
-                "timeSeriesArn": {
-                    "target": "com.amazonaws.iotsitewise#ARN",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">ARN</a> of the time series, which has the following format.</p>\n         <p>\n            <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>\n         </p>",
                         "smithy.api#required": {}
                     }
                 }
@@ -11911,17 +11498,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#UntagResourceResponse": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#UpdateAccessPolicy": {
             "type": "operation",
@@ -11996,17 +11577,11 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateAccessPolicyResponse": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#UpdateAsset": {
             "type": "operation",
@@ -12140,9 +11715,6 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateAssetModelResponse": {
@@ -12155,9 +11727,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateAssetProperty": {
@@ -12241,9 +11810,6 @@
                         "smithy.api#documentation": "<p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a\n      value for this parameter, the service uses the value of the <code>assetModelProperty</code> in\n      the asset model.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateAssetRequest": {
@@ -12277,9 +11843,6 @@
                         "smithy.api#documentation": "<p>A description for the asset.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateAssetResponse": {
@@ -12292,9 +11855,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateDashboard": {
@@ -12369,17 +11929,11 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateDashboardResponse": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#UpdateGateway": {
             "type": "operation",
@@ -12483,9 +12037,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateGatewayCapabilityConfigurationResponse": {
@@ -12505,9 +12056,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateGatewayRequest": {
@@ -12528,9 +12076,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdatePortal": {
@@ -12630,9 +12175,6 @@
                         "smithy.api#documentation": "<p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. \n  You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. \n  For more information, see <a href=\"https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html\">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdatePortalResponse": {
@@ -12645,9 +12187,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateProject": {
@@ -12715,17 +12254,11 @@
                         "smithy.api#idempotencyToken": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.iotsitewise#UpdateProjectResponse": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.iotsitewise#Url": {
             "type": "string",
