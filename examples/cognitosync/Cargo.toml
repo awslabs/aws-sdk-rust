@@ -14,7 +14,7 @@ version = "0.54.1"
 
 [dependencies.aws-sdk-cognitosync]
 path = "../../sdk/cognitosync"
-version = "0.25.0"
+version = "0.26.0"
 
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]
