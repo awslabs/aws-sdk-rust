@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-codeguruprofiler = "0.66.0"
+//! aws-sdk-codeguruprofiler = "0.67.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

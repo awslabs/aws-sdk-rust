@@ -8,8 +8,8 @@ publish = false
 
 [dependencies]
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config", features = ["native-tls", "rt-tokio"], default-features = false }
-aws-sdk-s3= { version = "0.66.0", path = "../../sdk/s3", features = ["native-tls"], default-features = false }
-aws-sdk-sts= { version = "0.66.0", path = "../../sdk/sts", features = ["native-tls"], default-features = false }
+aws-sdk-s3= { version = "0.67.0", path = "../../sdk/s3", features = ["native-tls"], default-features = false }
+aws-sdk-sts= { version = "0.67.0", path = "../../sdk/sts", features = ["native-tls"], default-features = false }
 
 [dependencies.tokio]
 version = "1.20.1"

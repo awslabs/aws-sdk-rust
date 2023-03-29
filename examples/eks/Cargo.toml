@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
-aws-sdk-eks= { version = "0.66.0", path = "../../sdk/eks" }
+aws-sdk-eks= { version = "0.67.0", path = "../../sdk/eks" }
 aws-types= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-types" }
 
 [dependencies.tokio]

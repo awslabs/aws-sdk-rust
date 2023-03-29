@@ -13,7 +13,7 @@ async-stream = "0.3"
 bytes = "1"
 hound = "3.4"
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
-aws-sdk-transcribestreaming= { version = "0.66.0", path = "../../sdk/transcribestreaming" }
+aws-sdk-transcribestreaming= { version = "0.67.0", path = "../../sdk/transcribestreaming" }
 
 [dependencies.structopt]
 version = "0.3"
